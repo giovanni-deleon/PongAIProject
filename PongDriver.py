@@ -58,14 +58,14 @@ def draw(win, paddles):
 # Handles paddle movement logic
 # Weird extra stuff is just calcs to keep play from going off screen
 def handlePaddleMovement(keys, leftPaddle, rightPaddle):
-    if keys[pygame.K_w] and (leftPaddle.y - leftPaddle.VELOCITY) >= 0:
+    if keys[pygame.K_w] and ((leftPaddle.y - leftPaddle.VELOCITY) >= 0):
         leftPaddle.move(up=True)
-    if keys[pygame.K_s] and leftPaddle.y + leftPaddle.VELOCITY + leftPaddle <= HEIGHT:
+    if keys[pygame.K_s] and ((leftPaddle.y + leftPaddle.height) <= HEIGHT):
         leftPaddle.move(up=False)
 
-    if keys[pygame.K_UP] and rightPaddle.y - rightPaddle.VELOCITY >= 0:
+    if keys[pygame.K_UP] and ((rightPaddle.y - rightPaddle.VELOCITY) >= 0):
         rightPaddle.move(up=True)
-    if keys[pygame.K_DOWN] and rightPaddle.y + rightPaddle.VELOCITY + rightPaddle <= HEIGHT:
+    if keys[pygame.K_DOWN] and ((rightPaddle.y + rightPaddle.height) <= HEIGHT):
         rightPaddle.move(up=False)
 
 
